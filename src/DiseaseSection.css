@@ -1,0 +1,405 @@
+/* === DISEASE TIMELINE SECTION === */
+
+.disease-timeline-section {
+  background-color: #F8F9FA;
+  padding: 100px 20px;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.timeline-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* === HEADER === */
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.timeline-tagline {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FF1100;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 16px 0;
+}
+
+.timeline-main-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1A1A1A;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.timeline-subtitle {
+  font-size: 18px;
+  color: #6C757D;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 32px;
+}
+
+.timeline-header-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === TIMELINE === */
+
+.timeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+/* LIGNE CENTRALE */
+.timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background-color: #FF1100; transform: translateX(-50%); }
+
+/* === TIMELINE ITEM === */
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Items à droite */
+.timeline-item.right {
+  flex-direction: row;
+}
+
+.timeline-item.right .timeline-media {
+  order: 1;
+}
+
+.timeline-item.right .timeline-content {
+  order: 2;
+}
+
+/* Items à gauche */
+.timeline-item.left {
+  flex-direction: row-reverse;
+}
+
+.timeline-item.left .timeline-media {
+  order: 2;
+}
+
+.timeline-item.left .timeline-content {
+  order: 1;
+}
+
+/* DOT SUR LA LIGNE */
+.timeline-dot { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background-color: #FF1100; border: 4px solid #F8F9FA; border-radius: 50%; z-index: 2; box-shadow: 0 0 0 4px #FF1100; }
+
+/* === IMAGE === */
+
+.timeline-media {
+  flex: 0 0 calc(50% - 20px);
+  max-width: calc(50% - 20px);
+}
+
+.timeline-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background-color: #E0E0E0;
+}
+
+/* === CONTENT === */
+
+.timeline-content {
+  flex: 0 0 calc(50% - 20px);
+  max-width: calc(50% - 20px);
+}
+
+.timeline-card {
+  background-color: #FFFFFF;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-tag {
+  display: inline-block;
+  background-color: transparent;
+  color: #1A1A1A;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+.timeline-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.timeline-description {
+  font-size: 15px;
+  color: #6C757D;
+  line-height: 1.7;
+  margin: 0 0 24px 0;
+}
+
+/* === LISTE === */
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.timeline-list li {
+  font-size: 15px;
+  color: #1A1A1A;
+  padding: 8px 0;
+  position: relative;
+}
+
+.timeline-list li::before {
+  display: none;
+}
+
+/* === BOUTONS TIMELINE === */
+
+.timeline-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-timeline {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 2px solid #E0E0E0;
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-timeline:hover {
+  border-color: #1A1A1A;
+  background-color: #F8F9FA;
+}
+
+.btn-timeline .arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn-timeline:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* === BOUTONS HEADER === */
+
+/* .btn-primary,
+.btn-secondary {
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  border-color: #1A1A1A;
+}
+
+.btn-primary:hover {
+  background-color: #FF1100;
+  border-color: #FF1100;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #1A1A1A;
+  border-color: #E0E0E0;
+}
+
+.btn-secondary:hover {
+  background-color: #F8F9FA;
+  border-color: #1A1A1A;
+} */
+
+/* === 📱 RESPONSIVE === */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  .timeline-main-title {
+    font-size: 42px;
+  }
+
+  .timeline-subtitle {
+    font-size: 17px;
+  }
+
+  .timeline-item {
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+
+  .timeline-card {
+    padding: 32px;
+  }
+
+  .timeline-media {
+    flex: 0 0 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+  }
+
+  .timeline-content {
+    flex: 0 0 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .disease-timeline-section {
+    padding: 80px 16px;
+  }
+
+  .timeline-header {
+    margin-bottom: 60px;
+  }
+
+  .timeline-main-title {
+    font-size: 36px;
+  }
+
+  .timeline-subtitle {
+    font-size: 16px;
+  }
+
+  /* Timeline devient verticale sur mobile */
+  .timeline-line {
+    left: 16px;
+  }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-left: 48px;
+    margin-bottom: 60px;
+  }
+
+  .timeline-dot {
+    left: 16px;
+    top: 32px;
+    transform: translate(-50%, 0);
+  }
+
+  .timeline-media {
+    flex: 0 0 100%;
+    max-width: 100%;
+    order: 2 !important;
+    margin-top: 20px;
+  }
+
+  .timeline-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    order: 1 !important;
+  }
+
+  .timeline-card {
+    padding: 24px;
+  }
+
+  .timeline-title {
+    font-size: 22px;
+  }
+
+  .timeline-description {
+    font-size: 15px;
+  }
+
+  .timeline-list li {
+    font-size: 14px;
+  }
+
+  .timeline-header-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  .timeline-buttons {
+    flex-direction: column;
+  }
+
+  .btn-timeline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Très petit mobile */
+@media (max-width: 480px) {
+  .timeline-main-title {
+    font-size: 32px;
+  }
+
+  .timeline-card {
+    padding: 20px;
+  }
+
+  .timeline-title {
+    font-size: 20px;
+  }
+
+  .timeline-description {
+    font-size: 14px;
+  }
+}

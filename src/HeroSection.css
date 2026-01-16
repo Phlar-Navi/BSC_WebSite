@@ -1,0 +1,253 @@
+/* === HERO SECTION === */
+
+.hero-section {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* === OVERLAY SOMBRE === */
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.85) 0%, rgba(255, 17, 0, 0.5) 100%);
+  z-index: 1;
+}
+
+/* === CONTAINER === */
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* === CONTENU === */
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-align: start;
+}
+
+.hero-title .highlight {
+  color: #FF1100;
+  position: relative;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #F8F9FA;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 800px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  text-align: justify;
+}
+
+/* === BOUTONS === */
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: #FFFFFF;
+  color: #FF1100;
+  border-color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(255, 17, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #FF1100;
+  color: #FFFFFF;
+  border-color: #FF1100;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(255, 17, 0, 0.5);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* === IMAGE HERO (COMMENTÉE) === */
+
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* === EFFET VAGUE === */
+
+.wave-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 2;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 120px;
+}
+
+.wave-divider path {
+  fill: #FFFFFF;
+}
+
+/* === 📱 RESPONSIVE === */
+
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 56px;
+  }
+
+  .hero-description {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    padding: 100px 20px 160px;
+    min-height: 90vh;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .wave-divider svg {
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 16px 140px;
+    min-height: 85vh;
+    background-attachment: scroll;
+  }
+
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 80%;
+  }
+
+  .wave-divider svg {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 60px 16px 120px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 14px 32px;
+    font-size: 15px;
+    max-width: 80%;
+  }
+
+  .wave-divider svg {
+    height: 60px;
+  }
+}
