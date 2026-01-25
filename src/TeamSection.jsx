@@ -1,5 +1,12 @@
 import "./TeamSection.css";
-// import member1 from "../assets/team/member1.jpg"; // À décommenter quand tu auras les photos
+import bitsie from "./assets/team/bitsie.jpeg";
+import akwa from "./assets/team/akwa.jpeg";
+import chamberlin from "./assets/team/chamberlin.jpeg";
+import issangui from "./assets/team/issangui.jpeg";
+import kelly from "./assets/team/kelly.jpeg";
+import yvonne from "./assets/team/yvonne.jpeg";
+import sona from "./assets/team/sona.jpeg";
+import berna from "./assets/team/berna.jpeg";
 
 const TeamSection = () => {
   const teamMembers = [
@@ -11,7 +18,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:dora@breaksicklecycle.org",
-      // image: member1
+      image: bitsie
     },
     {
       id: 2,
@@ -21,7 +28,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:berna@breaksicklecycle.org",
-      // image: member2
+      image: berna
     },
     {
       id: 3,
@@ -31,7 +38,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:yvonne@breaksicklecycle.org",
-      // image: member3
+      image: yvonne
     },
     {
       id: 4,
@@ -41,7 +48,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:constance@breaksicklecycle.org",
-      // image: member4
+      image: akwa
     },
     {
       id: 5,
@@ -51,7 +58,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:sonia@breaksicklecycle.org",
-      // image: member5
+      image: sona
     },
     {
       id: 6,
@@ -61,7 +68,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:chamberlin@breaksicklecycle.org",
-      // image: member6
+      image: chamberlin
     },
     {
       id: 7,
@@ -91,7 +98,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:gaudy@breaksicklecycle.org",
-      // image: member9
+      image: issangui
     },
     {
       id: 10,
@@ -101,7 +108,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:kelly@breaksicklecycle.org",
-      // image: member10
+      image: kelly
     }
   ];
 
@@ -124,23 +131,21 @@ const TeamSection = () => {
           {teamMembers.map((member) => (
             <div key={member.id} className="team-card">
               {/* IMAGE PLACEHOLDER */}
-              {/* 
               <div className="team-image">
                 <img src={member.image} alt={member.name} />
               </div>
-              */}
-              <div className="team-image-placeholder">
+              {/* <div className="team-image-placeholder">
                 <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                 </svg>
-              </div>
+              </div> */}
 
               <div className="team-content">
                 <h3 className="member-name">{member.name}</h3>
                 <p className="member-position">{member.position}</p>
                 <p className="member-bio">{member.bio}</p>
 
-                <div className="member-socials">
+                {/* <div className="member-socials">
                   <a href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -156,7 +161,7 @@ const TeamSection = () => {
                       <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                     </svg>
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

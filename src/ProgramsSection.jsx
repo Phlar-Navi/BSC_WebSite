@@ -1,6 +1,13 @@
 import { useState } from "react";
 import "./ProgramsSection.css";
-// import program1 from "../assets/program1.jpg"; // À décommenter quand tu auras les images
+import program1 from "./assets/awareness.jpeg";
+import program2 from "./assets/support.jpeg";
+import program3 from "./assets/capacity.jpeg";
+import program4 from "./assets/mentorship.jpeg";
+import program5 from "./assets/screening.jpeg";
+import program6 from "./assets/picnic.jpeg";
+import program7 from "./assets/rooms.jpeg";
+import program8 from "./assets/summit.jpeg";
 
 const ProgramsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,8 +20,8 @@ const ProgramsSection = () => {
       description: "Free genotype screening program in schools across the nation, raising awareness about sickle cell disease and promoting early detection among students.",
       author: "BSC Team",
       date: "Ongoing",
-      readTime: "Learn more",
-      // image: program1
+      /* readTime: "Learn more", */
+      image: program1
     },
     {
       id: 2,
@@ -23,8 +30,8 @@ const ProgramsSection = () => {
       description: "Providing comprehensive care assistance and follow-up for individuals living with sickle cell disease, ensuring they receive the medical attention they need.",
       author: "BSC Care Team",
       date: "Year-round",
-      readTime: "Get support",
-      // image: program2
+      /* readTime: "Get support", */
+      image: program2
     },
     {
       id: 3,
@@ -33,8 +40,8 @@ const ProgramsSection = () => {
       description: "Training and skill-development workshops designed to equip volunteers with the knowledge and tools needed to support sickle cell warriors effectively.",
       author: "BSC Training",
       date: "Quarterly",
-      readTime: "Join training",
-      // image: program3
+      /* readTime: "Join training", */
+      image: program3
     },
     {
       id: 4,
@@ -43,8 +50,8 @@ const ProgramsSection = () => {
       description: "Guiding doctors, nurses, and other clinicians through specialized mentorship programs to enhance their expertise in managing sickle cell disease.",
       author: "BSC Medical",
       date: "Ongoing",
-      readTime: "Apply now",
-      // image: program4
+      /* readTime: "Apply now", */
+      image: program4
     },
     {
       id: 5,
@@ -53,8 +60,8 @@ const ProgramsSection = () => {
       description: "Open to young people across the country, this program provides free genotype screening to help youth understand their genetic status and make informed health decisions.",
       author: "BSC Outreach",
       date: "Monthly",
-      readTime: "Register",
-      // image: program5
+      /* readTime: "Register", */
+      image: program5
     },
     {
       id: 6,
@@ -63,8 +70,8 @@ const ProgramsSection = () => {
       description: "A yearly gathering that brings together warriors, families, and supporters for a day of community, connection, and celebration.",
       author: "BSC Events",
       date: "Annual",
-      readTime: "RSVP",
-      // image: program6
+      /* readTime: "RSVP", */
+      image: program6
     },
     {
       id: 7,
@@ -72,9 +79,9 @@ const ProgramsSection = () => {
       title: "Digital Community Programs",
       description: "Weekly debates every Saturday night on sickle-cell topics • Warriors Room (monthly) where warriors share their stories • My Health My Life (Monthly) with medical professionals giving prevention tips • Beyond Crises: Dream-Plan-Succeed (bimonthly webinar) helping warriors live purpose-driven lives with life coaches.",
       author: "BSC Digital",
-      date: "Weekly/Monthly",
-      readTime: "Join online",
-      // image: program7
+      date: "Weekly/Monthly - Online",
+      /* readTime: "Online", */
+      image: program7
     },
     {
       id: 8,
@@ -82,9 +89,9 @@ const ProgramsSection = () => {
       title: "International Annual Sickle-Cell Summit",
       description: "Our flagship event bringing together experts, warriors, families, and stakeholders from around the world. Upcoming edition slated for December this year.",
       author: "BSC Summit",
-      date: "December 2025",
-      readTime: "Learn more",
-      // image: program8
+      date: "Upcomming !",
+      /* readTime: "Upcomming !", */
+      image: program8
     }
   ];
 
@@ -128,12 +135,12 @@ const ProgramsSection = () => {
             {visiblePrograms.map((program) => (
               <div key={program.id} className="program-card">
                 {/* IMAGE PLACEHOLDER - COMMENTÉE */}
-                {/* 
+                
                 <div className="program-image">
                   <img src={program.image} alt={program.title} />
                 </div>
-                */}
-                <div className="program-image-placeholder"></div>
+                
+                {/* <div className="program-image-placeholder"></div> */}
                 
                 <div className="program-content">
                   <span className="program-category">{program.category}</span>

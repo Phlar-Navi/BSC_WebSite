@@ -1,6 +1,6 @@
 import "./DiseaseSection.css";
 import imgDefinition from "./assets/scd-definition.png";
-import imgTypes from "./assets/scd-types.png";
+import imgTypes from "./assets/scd-types.jpg";
 import imgTransmission from "./assets/scd-transmission.png";
 
 const DiseaseTimelineSection = () => {

@@ -1,0 +1,324 @@
+/* === GALLERY SECTION === */
+
+.gallery-section {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
+  padding: 100px 20px;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.gallery-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* === HEADER === */
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.gallery-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1A1A1A;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.gallery-subtitle {
+  font-size: 18px;
+  color: #6C757D;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* === CAROUSEL === */
+
+.gallery-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+/* === NAVIGATION BUTTONS === */
+
+.gallery-nav-btn {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background-color: #FFFFFF;
+  border: 2px solid #E0E0E0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #1A1A1A;
+  z-index: 2;
+}
+
+.gallery-nav-btn:hover {
+  background-color: #FF1100;
+  border-color: #FF1100;
+  color: #FFFFFF;
+  transform: scale(1.1);
+  /* box-shadow: 0 4px 15px rgba(255, 17, 0, 0.3); */
+}
+
+.gallery-nav-btn:active {
+  transform: scale(0.95);
+}
+
+/* === GALLERY GRID === */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* === GALLERY ITEM === */
+
+.gallery-item {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  /* box-shadow: 0 12px 32px rgba(255, 17, 0, 0.15); */
+}
+
+/* === IMAGE PLACEHOLDER === */
+
+.gallery-image-placeholder {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(135deg, #FFE5E5 0%, #F8F9FA 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: #6C757D;
+}
+
+.gallery-image-placeholder::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.gallery-item:hover .gallery-image-placeholder::before {
+  left: 100%;
+}
+
+/* IMAGE (QUAND DÉCOMMENTÉE) */
+.gallery-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-image img {
+  transform: scale(1.1);
+}
+
+/* === IMAGE OVERLAY === */
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  padding: 24px 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .image-overlay {
+  transform: translateY(0);
+}
+
+.overlay-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* === CONTENT === */
+
+.gallery-content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.gallery-description {
+  font-size: 14px;
+  color: #6C757D;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* === DOTS NAVIGATION === */
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gallery-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #E0E0E0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.gallery-dot.active {
+  background-color: #1A1A1A;
+  width: 32px;
+  border-radius: 5px;
+}
+
+.gallery-dot:hover {
+  background-color: #FF1100;
+}
+
+/* === 📱 RESPONSIVE === */
+
+@media (max-width: 1024px) {
+  .gallery-section {
+    padding: 80px 20px;
+  }
+
+  .gallery-title {
+    font-size: 42px;
+  }
+
+  .gallery-subtitle {
+    font-size: 17px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .gallery-carousel {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 60px 16px;
+  }
+
+  .gallery-header {
+    margin-bottom: 50px;
+  }
+
+  .gallery-title {
+    font-size: 36px;
+  }
+
+  .gallery-subtitle {
+    font-size: 16px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery-carousel {
+    gap: 16px;
+  }
+
+  .gallery-nav-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .gallery-nav-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .gallery-image-placeholder,
+  .gallery-image {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-title {
+    font-size: 32px;
+  }
+
+  .gallery-carousel {
+    gap: 12px;
+  }
+
+  .gallery-nav-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .gallery-image-placeholder,
+  .gallery-image {
+    height: 200px;
+  }
+
+  .gallery-content {
+    padding: 16px;
+  }
+
+  .gallery-description {
+    font-size: 13px;
+  }
+
+  .overlay-title {
+    font-size: 16px;
+  }
+}

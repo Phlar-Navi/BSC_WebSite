@@ -1,7 +1,7 @@
 import "./Footer.css";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import logo from "./assets/logo.png"; // Remplacez par votre logo
-
+// https://docs.google.com/forms/d/e/1FAIpQLScAff66HIAQLRD6y9tBo24EJz8Zuqy1jQNPDJJQS9YGjlZMBQ/viewform?usp=publish-editor
 const Footer = () => {
   const navigationLinks = [
     { name: "Home", href: "#home" },
@@ -9,7 +9,8 @@ const Footer = () => {
     { name: "Learn", href: "#learn" },
     { name: "Programs", href: "#programs" },
     { name: "Team", href: "#team" },
-    { name: "About", href: "#about" }
+    { name: "About", href: "#about" },
+    { name: "Gallery", href: "#gallery" }
   ];
 
   const socialLinks = [
@@ -66,16 +67,29 @@ const Footer = () => {
             <p className="footer-newsletter-text">
               Join our newsletter to stay up to date on features and releases.
             </p>
-            <form className="footer-newsletter-form">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
+            <button className="footer-subscribe-btn">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScAff66HIAQLRD6y9tBo24EJz8Zuqy1jQNPDJJQS9YGjlZMBQ/viewform?usp=publish-editor">
+                  <span>Subscribe</span>
+                </a>
+            </button>
+            {/* <form
+              className="footer-newsletter-form"
+              action="https://docs.google.com/forms/d/e/1FAIpQLScAff66HIAQLRD6y9tBo24EJz8Zuqy1jQNPDJJQS9YGjlZMBQ/viewform?usp=publish-editor"
+              method="POST"
+              target="_blank"
+            >
+              <input
+                type="email"
+                name="entry.1572402992" // ID du champ email du form
+                placeholder="Enter your email"
                 className="footer-input"
+                required
               />
               <button type="submit" className="footer-subscribe-btn">
                 Subscribe
               </button>
-            </form>
+            </form> */}
+
             <p className="footer-disclaimer">
               By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.
             </p>

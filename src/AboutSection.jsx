@@ -1,5 +1,5 @@
 import "./AboutSection.css";
-import aboutImage from "./assets/about-image.png";
+import aboutImage from "./assets/about_5.jpeg";
 
 const AboutSection = () => {
   return (
@@ -7,7 +7,6 @@ const AboutSection = () => {
       <div className="about-container">
         {/* LEFT SIDE - TEXT */}
         <div className="about-content">
-          <p className="about-tagline">Tagline</p>
           <h2 className="about-title">ABOUT BREAK SICKLE CYCLE</h2>
           
           <div className="about-text">

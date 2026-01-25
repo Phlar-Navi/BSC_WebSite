@@ -11,6 +11,7 @@ import TeamSection from './TeamSection.jsx'
 import SocialSection from './SocialSection.jsx'
 import AboutSection from './AboutSection.jsx'
 import Footer from './Footer.jsx'
+import GallerySection from './GallerySection.jsx'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
       <TeamSection />
       <SocialSection />
       <AboutSection />
+      <GallerySection />
       <Footer />
     </>
   )

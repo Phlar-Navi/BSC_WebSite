@@ -1,5 +1,5 @@
 import "./HeroSection.css";
-import heroBackground from "./assets/hero_back.jpg";
+import heroBackground from "./assets/hero_back.jpeg";
 import Navbar from "./Navbar";
 
 const HeroSection = () => {
@@ -25,7 +25,11 @@ const HeroSection = () => {
           </p>
           
           <div className="hero-buttons">
-            <a href="#join" className="btn-primary">Join us</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdX98TN2-GqMCId-OZNVZrGOXb4Fx7r_cN4C1V4kOY2wyQw2Q/viewform?usp=header" 
+               className="btn-primary"
+            >
+              Join us
+            </a>
             <a href="#learn" className="btn-secondary">Learn more</a>
           </div>
         </div>

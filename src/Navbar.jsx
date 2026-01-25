@@ -68,6 +68,13 @@ const Navbar = () => {
           >
             <a href="#about">About</a>
           </li>
+
+          <li
+            className={activeSection === "gallery" ? "active" : ""}
+            onClick={() => handleClick("gallery")}
+          >
+            <a href="#gallery">Gallery</a>
+          </li>
           
           {/* Dropdown pour "Public" */}
           {/* <li 

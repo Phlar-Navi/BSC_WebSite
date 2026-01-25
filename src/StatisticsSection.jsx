@@ -32,12 +32,12 @@ const StatisticsSection = () => {
       label: "Volunteers",
       description: "Committed to the BSC mission"
     },
-    {
+    /* {
       id: 6,
       number: "240",
       label: "Symposium Participants",
       description: "At the University of Douala"
-    }
+    } */
   ];
 
   return (

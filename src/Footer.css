@@ -64,6 +64,10 @@
   transition: border-color 0.3s ease;
 }
 
+button a span {
+  color: white;
+}
+
 .footer-input:focus {
   border-color: #1A1A1A;
 }
