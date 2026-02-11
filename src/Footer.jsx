@@ -1,5 +1,5 @@
 import "./Footer.css";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import logo from "./assets/logo.png"; // Remplacez par votre logo
 // https://docs.google.com/forms/d/e/1FAIpQLScAff66HIAQLRD6y9tBo24EJz8Zuqy1jQNPDJJQS9YGjlZMBQ/viewform?usp=publish-editor
 const Footer = () => {
@@ -64,14 +64,34 @@ const Footer = () => {
             <div className="footer-logo">
               <img src={logo} alt="Break Sickle Cycle" />
             </div>
-            <p className="footer-newsletter-text">
-              Join our newsletter to stay up to date on features and releases.
-            </p>
-            <button className="footer-subscribe-btn">
+            <div className="footer-contact">
+              <div className="footer-contact-item">
+                <Mail size={18} className="footer-contact-icon" />
+                <a href="mailto:breaksicklecycle@gmail.com" className="footer-newsletter-text">
+                  breaksicklecycle@gmail.com
+                </a>
+              </div>
+
+              <div className="footer-contact-item">
+                <Phone size={18} className="footer-contact-icon" />
+                <a href="tel:+237620973233" className="footer-newsletter-text">
+                  +237 6 20 97 32 33
+                </a>
+              </div>
+
+              <div className="footer-contact-item">
+                <MapPin size={18} className="footer-contact-icon" />
+                <p href="" className="footer-newsletter-text">
+                  Bepanda, TSF Camtel Douala-Cameroon
+                </p>
+              </div>
+            </div>
+
+            {/* <button className="footer-subscribe-btn">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScAff66HIAQLRD6y9tBo24EJz8Zuqy1jQNPDJJQS9YGjlZMBQ/viewform?usp=publish-editor">
                   <span>Subscribe</span>
                 </a>
-            </button>
+            </button> */}
             {/* <form
               className="footer-newsletter-form"
               action="https://docs.google.com/forms/d/e/1FAIpQLScAff66HIAQLRD6y9tBo24EJz8Zuqy1jQNPDJJQS9YGjlZMBQ/viewform?usp=publish-editor"
@@ -89,10 +109,6 @@ const Footer = () => {
                 Subscribe
               </button>
             </form> */}
-
-            <p className="footer-disclaimer">
-              By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.
-            </p>
           </div>
 
           {/* MIDDLE - NAVIGATION */}
@@ -133,11 +149,11 @@ const Footer = () => {
           <p className="footer-copyright">
             © 2026 Break Sickle Cycle. All rights reserved.
           </p>
-          <div className="footer-legal">
+          {/* <div className="footer-legal">
             <a href="#privacy">Privacy Policy</a>
             <a href="#terms">Terms of Service</a>
             <a href="#cookies">Cookies Settings</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

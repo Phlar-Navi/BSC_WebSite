@@ -30,6 +30,37 @@
   gap: 20px;
 }
 
+/* Contact items with icons */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-contact-icon {
+  color: #1A1A1A;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.footer-contact-item .footer-newsletter-text,
+.footer-contact-item a.footer-newsletter-text {
+  margin: 0;
+  color: #1A1A1A;
+  text-decoration: none;
+}
+
+.footer-contact-item a.footer-newsletter-text:hover {
+  text-decoration: underline;
+}
+
 .footer-logo {
   margin-bottom: 8px;
 }
@@ -43,7 +74,8 @@
   font-size: 16px;
   color: #1A1A1A;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 0 8px;
+
 }
 
 .footer-newsletter-form {

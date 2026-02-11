@@ -7,6 +7,12 @@ import kelly from "./assets/team/kelly.jpeg";
 import yvonne from "./assets/team/yvonne.jpeg";
 import sona from "./assets/team/sona.jpeg";
 import berna from "./assets/team/berna.jpeg";
+import antoinette from "./assets/team/antoinette.jpg";
+import manuella from "./assets/team/manuella.jpg";
+import issa from "./assets/team/issa.jpg";
+import tanekeu from "./assets/team/tanekeu.jpg";
+import tiku from "./assets/team/tiku.jpg";
+import egoh from "./assets/team/egoh.jpg";
 
 const TeamSection = () => {
   const teamMembers = [
@@ -43,7 +49,7 @@ const TeamSection = () => {
     {
       id: 4,
       name: "Ms Akwa Constance Nji",
-      position: "Project Manager",
+      position: "Project Manager & Regional Coordinator - Center",
       bio: "Overseeing the execution of BSC's diverse programs from screening campaigns to community events and online activities.",
       linkedin: "https://www.linkedin.com",
       twitter: "https://twitter.com",
@@ -78,7 +84,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:manuella@breaksicklecycle.org",
-      // image: member7
+      image: manuella
     },
     {
       id: 8,
@@ -88,7 +94,7 @@ const TeamSection = () => {
       linkedin: "https://www.linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:priscille@breaksicklecycle.org",
-      // image: member8
+      image: antoinette
     },
     {
       id: 9,
@@ -109,6 +115,46 @@ const TeamSection = () => {
       twitter: "https://twitter.com",
       email: "mailto:kelly@breaksicklecycle.org",
       image: kelly
+    },
+    {
+      id: 11,
+      name: "Issa Ibrahim",
+      position: "Regional Coordinator - Far North",
+      bio: "Coordinating BSC's efforts in the Far North region, building local partnerships, and ensuring our programs reach those in need.",
+      linkedin: "https://www.linkedin.com",
+      twitter: "https://twitter.com",
+      email: "mailto:issa@breaksicklecycle.org",
+      image: issa
+    },
+    {
+      id: 12,
+      name: "Tanekeu Tateng Harold Rayan",
+      position: "Regional Coordinator - West",
+      bio: "Coordinating BSC's efforts in the West region, building local partnerships, and ensuring our programs reach those in need.",
+      linkedin: "https://www.linkedin.com",
+      twitter: "https://twitter.com",
+      email: "mailto:harold@breaksicklecycle.org",
+      image: tanekeu
+    },
+    {
+      id: 13,
+      name: "Tiku Kevin Tebeck",
+      position: "Regional Coordinator - North",
+      bio: "Coordinating BSC's efforts in the North region, building local partnerships, and ensuring our programs reach those in need.",
+      linkedin: "https://www.linkedin.com",
+      twitter: "https://twitter.com",
+      email: "mailto:kevin@breaksicklecycle.org",
+      image: tiku
+    },
+    {
+      id: 14,
+      name: "Egoh Kellser Abla",
+      position: "Regional Coordinator - North West",
+      bio: "Coordinating BSC's efforts in the North West region, building local partnerships, and ensuring our programs reach those in need.",
+      linkedin: "https://www.linkedin.com",
+      twitter: "https://twitter.com",
+      email: "mailto:kellser@breaksicklecycle.org",
+      image: egoh
     }
   ];
 
