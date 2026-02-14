@@ -129,7 +129,7 @@ const GallerySection = () => {
       <div className="gallery-container">
         {/* HEADER */}
         <div className="gallery-header">
-          <h2 className="gallery-title">Image Gallery</h2>
+          <h2 className="gallery-title">Break Sickle Cycle Image Gallery</h2>
           <p className="gallery-subtitle">
             Moments that matter. Explore our journey through photos capturing the impact, 
             passion, and community spirit of Break Sickle Cycle.

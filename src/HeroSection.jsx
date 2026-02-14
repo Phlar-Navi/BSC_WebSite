@@ -15,6 +15,7 @@ const HeroSection = () => {
         <div className="hero-content">
           <h1 className="hero-title">
             Let's build a <span className="highlight">Sickle Cell Free Community</span> together
+            with <span className="highlight">Break Sickle Cycle</span>
           </h1>
           
           <p className="hero-description">

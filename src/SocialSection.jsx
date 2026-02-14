@@ -82,7 +82,7 @@ const SocialSection = () => {
         {/* HEADER */}
         <div className="social-header">
           <p className="social-tagline">Join Our Community</p>
-          <h2 className="social-title">Connect With Us</h2>
+          <h2 className="social-title">Connect With Break Sickle Cycle</h2>
           <p className="social-subtitle">
             Become part of the Break Sickle Cycle movement. Choose your preferred platform 
             and join thousands of warriors, supporters, and advocates making a difference.

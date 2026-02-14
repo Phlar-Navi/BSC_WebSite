@@ -46,7 +46,7 @@ const StatisticsSection = () => {
         {/* HEADER */}
         <div className="statistics-header">
           <h2 className="statistics-title">
-            Highlight the growth of our impact by the numbers
+            Highlighting the growth of Break Sickle Cycle's impact in figures
           </h2>
           <p className="statistics-description">
             Through our "One Voice, One Hope: Youths Leading the Sickle Cell Fight" campaign, 

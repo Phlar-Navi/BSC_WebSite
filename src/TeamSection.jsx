@@ -164,7 +164,7 @@ const TeamSection = () => {
         {/* HEADER */}
         <div className="team-header">
           <p className="team-tagline">Meet the Team</p>
-          <h2 className="team-title">Our team</h2>
+          <h2 className="team-title">Discover Break Sickle Cycle's Dedicated Professionals</h2>
           <p className="team-subtitle">
             Dedicated professionals united in the fight against sickle cell disease. 
             Our diverse team brings together medical expertise, community outreach, 

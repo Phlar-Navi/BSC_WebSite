@@ -121,7 +121,7 @@ const ProgramsSection = () => {
         {/* HEADER */}
         <div className="programs-header">
           <p className="programs-tagline">Our Programs</p>
-          <h2 className="programs-title">What We Do</h2>
+          <h2 className="programs-title">What does Break Sickle Cycle do ?</h2>
           <p className="programs-subtitle">
             Discover our comprehensive programs designed to support sickle cell warriors, 
             educate communities, and advance medical care.
