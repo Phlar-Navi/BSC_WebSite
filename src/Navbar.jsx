@@ -1,23 +1,26 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import logo from "./assets/logo.png";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
-  /* const [dropdownOpen, setDropdownOpen] = useState(false); */
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
 
   const handleClick = (section) => {
     setActiveSection(section);
     setMenuOpen(false);
-    /* setDropdownOpen(false); */
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src={logo} alt="Break Sickle Cycle" className="logo-image" />
-        {/* <h1 className="logo-text">Break Sickle Cycle</h1> */}
+        <Link to="/">
+          <img src={logo} alt="Break Sickle Cycle" className="logo-image" />
+        </Link>
       </div>
 
       {/* Bouton burger */}
@@ -30,81 +33,94 @@ const Navbar = () => {
       <div className={`navbar-right ${menuOpen ? "open" : ""}`}>
         <ul className="navbar-menu">
           <li
-            className={activeSection === "home" ? "active" : ""}
+            className={activeSection === "home" && isHomePage ? "active" : ""}
             onClick={() => handleClick("home")}
           >
-            <a href="#home">Home</a>
+            {isHomePage ? (
+              <a href="#home">Home</a>
+            ) : (
+              <Link to="/">Home</Link>
+            )}
           </li>
           <li
-            className={activeSection === "impact" ? "active" : ""}
+            className={activeSection === "impact" && isHomePage ? "active" : ""}
             onClick={() => handleClick("impact")}
           >
-            <a href="#impact">Impact</a>
+            {isHomePage ? (
+              <a href="#impact">Impact</a>
+            ) : (
+              <Link to="/#impact">Impact</Link>
+            )}
           </li>
           <li
-            className={activeSection === "learn" ? "active" : ""}
+            className={activeSection === "learn" && isHomePage ? "active" : ""}
             onClick={() => handleClick("learn")}
           >
-            <a href="#learn">Learn</a>
+            {isHomePage ? (
+              <a href="#learn">Learn</a>
+            ) : (
+              <Link to="/#learn">Learn</Link>
+            )}
           </li>
 
           <li
-            className={activeSection === "programs" ? "active" : ""}
+            className={activeSection === "programs" && isHomePage ? "active" : ""}
             onClick={() => handleClick("programs")}
           >
-            <a href="#programs">Programs</a>
+            {isHomePage ? (
+              <a href="#programs">Programs</a>
+            ) : (
+              <Link to="/#programs">Programs</Link>
+            )}
           </li>
 
           <li
-            className={activeSection === "team" ? "active" : ""}
+            className={location.pathname.startsWith("/news") ? "active" : ""}
+            onClick={() => handleClick("news")}
+          >
+            <Link to="/news">News</Link>
+          </li>
+
+          <li
+            className={location.pathname.startsWith("/activities") ? "active" : ""}
+            onClick={() => handleClick("activities")}
+          >
+            <Link to="/activities">Activities</Link>
+          </li>
+
+          <li
+            className={activeSection === "team" && isHomePage ? "active" : ""}
             onClick={() => handleClick("team")}
           >
-            <a href="#team">Team</a>
+            {isHomePage ? (
+              <a href="#team">Team</a>
+            ) : (
+              <Link to="/#team">Team</Link>
+            )}
           </li>
 
           <li
-            className={activeSection === "about" ? "active" : ""}
+            className={activeSection === "about" && isHomePage ? "active" : ""}
             onClick={() => handleClick("about")}
           >
-            <a href="#about">About</a>
+            {isHomePage ? (
+              <a href="#about">About</a>
+            ) : (
+              <Link to="/#about">About</Link>
+            )}
           </li>
 
           <li
-            className={activeSection === "gallery" ? "active" : ""}
+            className={activeSection === "gallery" && isHomePage ? "active" : ""}
             onClick={() => handleClick("gallery")}
           >
-            <a href="#gallery">Gallery</a>
+            {isHomePage ? (
+              <a href="#gallery">Gallery</a>
+            ) : (
+              <Link to="/#gallery">Gallery</Link>
+            )}
           </li>
-          
-          {/* Dropdown pour "Public" */}
-          {/* <li 
-            className={`dropdown ${activeSection === "audience" ? "active" : ""}`}
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
-            <span className="dropdown-trigger">
-              Public
-              <svg className="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-                <path d="M6 8L2 4h8L6 8z"/>
-              </svg>
-            </span>
-            <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
-              <li onClick={() => handleClick("audience")}>
-                <a href="#audience">Écoles & Universités</a>
-              </li>
-              <li onClick={() => handleClick("audience")}>
-                <a href="#audience">Entreprises</a>
-              </li>
-              <li onClick={() => handleClick("audience")}>
-                <a href="#audience">Centres de formation</a>
-              </li>
-            </ul>
-          </li> */}
         </ul>
-
-        {/* <div className="navbar-buttons">
-          <button className="btn-login">Se connecter</button>
-        </div> */}
       </div>
     </nav>
   );

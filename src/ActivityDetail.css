@@ -1,0 +1,143 @@
+.activity-detail {
+  padding: 120px 20px 60px;
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.activity-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  color: #c62828;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 30px;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #8e0000;
+}
+
+.activity-detail-header {
+  margin-bottom: 30px;
+}
+
+.activity-detail-badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.activity-detail-category {
+  display: inline-block;
+  background: #c62828;
+  color: white;
+  padding: 4px 14px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.detail-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-ongoing { background: #d4edda; color: #155724; }
+.badge-upcoming { background: #d1ecf1; color: #0c5460; }
+.badge-completed { background: #fff3cd; color: #856404; }
+
+.activity-detail-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.activity-detail-meta {
+  display: flex;
+  gap: 10px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.activity-detail-image {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.activity-detail-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.activity-detail-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 30px;
+  white-space: pre-line;
+}
+
+.activity-detail-actions {
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #e8e8e8;
+  color: #333;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.btn-back:hover {
+  background: #d0d0d0;
+}
+
+.activity-detail-loading,
+.activity-detail-error {
+  padding: 150px 20px 60px;
+  text-align: center;
+  min-height: 60vh;
+  color: #666;
+}
+
+.activity-detail-error h2 {
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .activity-detail {
+    padding: 100px 15px 40px;
+  }
+
+  .activity-detail-title {
+    font-size: 1.6rem;
+  }
+
+  .activity-detail-content {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+}

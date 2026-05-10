@@ -1,44 +1,27 @@
+import { useState, useEffect } from "react";
 import "./StatisticsSection.css";
+import { getStatistics } from "./api";
+
+const STATIC_STATS = [
+  { id: 1, number: "100k+", label: "People Reached", description: "Through social media, radio and TV campaigns" },
+  { id: 2, number: "15k+", label: "Students Impacted", description: "In 20 schools across Cameroon" },
+  { id: 3, number: "300", label: "Youths Screened", description: "Under 35 received genotype status" },
+  { id: 4, number: "6", label: "Regions", description: "Active presence across the country" },
+  { id: 5, number: "50", label: "Volunteers", description: "Committed to the BSC mission" },
+];
 
 const StatisticsSection = () => {
-  const stats = [
-    {
-      id: 1,
-      number: "100k+",
-      label: "People Reached",
-      description: "Through social media, radio and TV campaigns"
-    },
-    {
-      id: 2,
-      number: "15k+",
-      label: "Students Impacted",
-      description: "In 20 schools across Cameroon"
-    },
-    {
-      id: 3,
-      number: "300",
-      label: "Youths Screened",
-      description: "Under 35 received genotype status"
-    },
-    {
-      id: 4,
-      number: "6",
-      label: "Regions",
-      description: "Active presence across the country"
-    },
-    {
-      id: 5,
-      number: "50",
-      label: "Volunteers",
-      description: "Committed to the BSC mission"
-    },
-    /* {
-      id: 6,
-      number: "240",
-      label: "Symposium Participants",
-      description: "At the University of Douala"
-    } */
-  ];
+  const [stats, setStats] = useState(STATIC_STATS);
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      const data = await getStatistics();
+      if (data && data.length > 0) {
+        setStats(data);
+      }
+    };
+    fetchStats();
+  }, []);
 
   return (
     <section className="statistics-section" id="impact">

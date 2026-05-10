@@ -1,13 +1,16 @@
 import "./Footer.css";
 import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
-import logo from "./assets/logo.png"; // Remplacez par votre logo
-// https://docs.google.com/forms/d/e/1FAIpQLScAff66HIAQLRD6y9tBo24EJz8Zuqy1jQNPDJJQS9YGjlZMBQ/viewform?usp=publish-editor
+import { Link } from "react-router-dom";
+import logo from "./assets/logo.png";
+
 const Footer = () => {
   const navigationLinks = [
     { name: "Home", href: "#home" },
     { name: "Impact", href: "#impact" },
     { name: "Learn", href: "#learn" },
     { name: "Programs", href: "#programs" },
+    { name: "Activities", href: "/activities", isRoute: true },
+    { name: "News", href: "/news", isRoute: true },
     { name: "Team", href: "#team" },
     { name: "About", href: "#about" },
     { name: "Gallery", href: "#gallery" }
@@ -117,7 +120,11 @@ const Footer = () => {
             <ul className="footer-links">
               {navigationLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href}>{link.name}</a>
+                  {link.isRoute ? (
+                    <Link to={link.href}>{link.name}</Link>
+                  ) : (
+                    <a href={link.href}>{link.name}</a>
+                  )}
                 </li>
               ))}
             </ul>

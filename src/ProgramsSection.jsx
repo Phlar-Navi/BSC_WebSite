@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./ProgramsSection.css";
+import { getActivities } from "./api";
+
+// Fallback static images
 import program1 from "./assets/awareness.jpeg";
 import program2 from "./assets/support.jpeg";
 import program3 from "./assets/capacity.jpeg";
@@ -9,91 +13,30 @@ import program6 from "./assets/picnic.jpeg";
 import program7 from "./assets/rooms.jpeg";
 import program8 from "./assets/summit.jpeg";
 
+const STATIC_PROGRAMS = [
+  { id: 1, category_display: "Education & Awareness", title: "National Sickle-Cell Awareness Program", description: "Free genotype screening program in schools across the nation, raising awareness about sickle cell disease and promoting early detection among students.", author: "BSC Team", date_display: "Ongoing", image: program1 },
+  { id: 2, category_display: "Medical Support", title: "Medical Support for Sickle-Cell Warriors", description: "Providing comprehensive care assistance and follow-up for individuals living with sickle cell disease, ensuring they receive the medical attention they need.", author: "BSC Care Team", date_display: "Year-round", image: program2 },
+  { id: 3, category_display: "Training", title: "Capacity-Building for Volunteers", description: "Training and skill-development workshops designed to equip volunteers with the knowledge and tools needed to support sickle cell warriors effectively.", author: "BSC Training", date_display: "Quarterly", image: program3 },
+  { id: 4, category_display: "Healthcare", title: "Sickle-Cell Mentorship for Health Personnel", description: "Guiding doctors, nurses, and other clinicians through specialized mentorship programs to enhance their expertise in managing sickle cell disease.", author: "BSC Medical", date_display: "Ongoing", image: program4 },
+  { id: 5, category_display: "Youth Screening", title: "Free Genotype Screening for Youths", description: "Open to young people across the country, this program provides free genotype screening to help youth understand their genetic status and make informed health decisions.", author: "BSC Outreach", date_display: "Monthly", image: program5 },
+  { id: 6, category_display: "Community Event", title: "Annual Picnic-Brunch", description: "A yearly gathering that brings together warriors, families, and supporters for a day of community, connection, and celebration.", author: "BSC Events", date_display: "Annual", image: program6 },
+  { id: 7, category_display: "Online Activities", title: "Digital Community Programs", description: "Weekly debates every Saturday night on sickle-cell topics • Warriors Room (monthly) where warriors share their stories • My Health My Life (Monthly) with medical professionals giving prevention tips.", author: "BSC Digital", date_display: "Weekly/Monthly - Online", image: program7 },
+  { id: 8, category_display: "Major Event", title: "International Annual Sickle-Cell Summit", description: "Our flagship event bringing together experts, warriors, families, and stakeholders from around the world. Upcoming edition slated for December this year.", author: "BSC Summit", date_display: "Upcoming !", image: program8 },
+];
+
 const ProgramsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [programs, setPrograms] = useState(STATIC_PROGRAMS);
 
-  const programs = [
-    {
-      id: 1,
-      category: "Education & Awareness",
-      title: "National Sickle-Cell Awareness Program",
-      description: "Free genotype screening program in schools across the nation, raising awareness about sickle cell disease and promoting early detection among students.",
-      author: "BSC Team",
-      date: "Ongoing",
-      /* readTime: "Learn more", */
-      image: program1
-    },
-    {
-      id: 2,
-      category: "Medical Support",
-      title: "Medical Support for Sickle-Cell Warriors",
-      description: "Providing comprehensive care assistance and follow-up for individuals living with sickle cell disease, ensuring they receive the medical attention they need.",
-      author: "BSC Care Team",
-      date: "Year-round",
-      /* readTime: "Get support", */
-      image: program2
-    },
-    {
-      id: 3,
-      category: "Training",
-      title: "Capacity-Building for Volunteers",
-      description: "Training and skill-development workshops designed to equip volunteers with the knowledge and tools needed to support sickle cell warriors effectively.",
-      author: "BSC Training",
-      date: "Quarterly",
-      /* readTime: "Join training", */
-      image: program3
-    },
-    {
-      id: 4,
-      category: "Healthcare",
-      title: "Sickle-Cell Mentorship for Health Personnel",
-      description: "Guiding doctors, nurses, and other clinicians through specialized mentorship programs to enhance their expertise in managing sickle cell disease.",
-      author: "BSC Medical",
-      date: "Ongoing",
-      /* readTime: "Apply now", */
-      image: program4
-    },
-    {
-      id: 5,
-      category: "Youth Screening",
-      title: "Free Genotype Screening for Youths",
-      description: "Open to young people across the country, this program provides free genotype screening to help youth understand their genetic status and make informed health decisions.",
-      author: "BSC Outreach",
-      date: "Monthly",
-      /* readTime: "Register", */
-      image: program5
-    },
-    {
-      id: 6,
-      category: "Community Event",
-      title: "Annual Picnic-Brunch",
-      description: "A yearly gathering that brings together warriors, families, and supporters for a day of community, connection, and celebration.",
-      author: "BSC Events",
-      date: "Annual",
-      /* readTime: "RSVP", */
-      image: program6
-    },
-    {
-      id: 7,
-      category: "Online Activities",
-      title: "Digital Community Programs",
-      description: "Weekly debates every Saturday night on sickle-cell topics • Warriors Room (monthly) where warriors share their stories • My Health My Life (Monthly) with medical professionals giving prevention tips • Beyond Crises: Dream-Plan-Succeed (bimonthly webinar) helping warriors live purpose-driven lives with life coaches.",
-      author: "BSC Digital",
-      date: "Weekly/Monthly - Online",
-      /* readTime: "Online", */
-      image: program7
-    },
-    {
-      id: 8,
-      category: "Major Event",
-      title: "International Annual Sickle-Cell Summit",
-      description: "Our flagship event bringing together experts, warriors, families, and stakeholders from around the world. Upcoming edition slated for December this year.",
-      author: "BSC Summit",
-      date: "Upcomming !",
-      /* readTime: "Upcomming !", */
-      image: program8
-    }
-  ];
+  useEffect(() => {
+    const fetchPrograms = async () => {
+      const data = await getActivities();
+      if (data && data.length > 0) {
+        setPrograms(data);
+      }
+    };
+    fetchPrograms();
+  }, []);
 
   const itemsPerPage = 3;
   const totalPages = Math.ceil(programs.length / itemsPerPage);
@@ -126,7 +69,6 @@ const ProgramsSection = () => {
             Discover our comprehensive programs designed to support sickle cell warriors, 
             educate communities, and advance medical care.
           </p>
-          {/* <button className="btn-view-all">View all</button> */}
         </div>
 
         {/* CAROUSEL */}
@@ -134,16 +76,12 @@ const ProgramsSection = () => {
           <div className="programs-grid">
             {visiblePrograms.map((program) => (
               <div key={program.id} className="program-card">
-                {/* IMAGE PLACEHOLDER - COMMENTÉE */}
-                
                 <div className="program-image">
                   <img src={program.image} alt={program.title} />
                 </div>
                 
-                {/* <div className="program-image-placeholder"></div> */}
-                
                 <div className="program-content">
-                  <span className="program-category">{program.category}</span>
+                  <span className="program-category">{program.category_display}</span>
                   <h3 className="program-title">{program.title}</h3>
                   <p className="program-description">{program.description}</p>
                   
@@ -156,11 +94,12 @@ const ProgramsSection = () => {
                       </div>
                       <div className="author-info">
                         <p className="author-name">{program.author}</p>
-                        <p className="program-meta">
-                          {program.date} • {program.readTime}
-                        </p>
+                        <p className="program-meta">{program.date_display}</p>
                       </div>
                     </div>
+                    <Link to={`/activities/${program.id}`} className="program-read-more">
+                      Lire plus →
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -169,7 +108,6 @@ const ProgramsSection = () => {
 
           {/* NAVIGATION */}
           <div className="carousel-controls">
-            {/* DOTS */}
             <div className="carousel-dots">
               {Array.from({ length: totalPages }).map((_, index) => (
                 <button
@@ -181,28 +119,26 @@ const ProgramsSection = () => {
               ))}
             </div>
 
-            {/* ARROWS */}
             <div className="carousel-arrows">
-              <button 
-                className="arrow-btn prev" 
-                onClick={goToPrevious}
-                aria-label="Previous"
-              >
+              <button className="arrow-btn prev" onClick={goToPrevious} aria-label="Previous">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M15 18l-6-6 6-6"/>
                 </svg>
               </button>
-              <button 
-                className="arrow-btn next" 
-                onClick={goToNext}
-                aria-label="Next"
-              >
+              <button className="arrow-btn next" onClick={goToNext} aria-label="Next">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M9 18l6-6-6-6"/>
                 </svg>
               </button>
             </div>
           </div>
+        </div>
+
+        {/* CTA - Voir toutes les activités */}
+        <div className="programs-cta">
+          <Link to="/activities" className="btn-all-activities">
+            Voir toutes les activités
+          </Link>
         </div>
       </div>
     </section>

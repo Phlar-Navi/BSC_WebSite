@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./GallerySection.css";
+import { getGallery } from "./api";
+
+// Fallback static images
 import gallery1 from "./assets/gallery/marche.jpeg";
 import gallery2 from "./assets/gallery/marche_douala.jpeg";
 import gallery3 from "./assets/gallery/symposium.jpeg";
@@ -14,95 +17,35 @@ import gallery11 from "./assets/gallery/sensibilisation_centre.jpeg";
 import gallery12 from "./assets/gallery/sensibilisation_littoral.jpeg";
 import gallery13 from "./assets/gallery/sensibilisation_univ_yde.jpeg";
 
+const STATIC_GALLERY = [
+  { id: 1, title: "Awareness Walk 2025 (Yaounde)", description: "Sports and awareness walk in the Yaounde Central region during the month of June 2025 International Sickle Cell Day", image: gallery1 },
+  { id: 2, title: "Awareness Walk 2025 (Douala)", description: "Awareness campaign and fitness walk in the city of Douala! June 2025 (International Sickle Cell Day)", image: gallery2 },
+  { id: 3, title: "University Symposium (FMSP)", description: "Symposium with professors and free screening at FMSP University Douala", image: gallery3 },
+  { id: 4, title: "Church Outreach Program", description: "Awareness and screening in churches to reach a wider community audience", image: gallery4 },
+  { id: 5, title: "Region Outreach (Southwest)", description: "Awareness in the southwest region.", image: gallery5 },
+  { id: 6, title: "Regional Outreach (Douala)", description: "Awareness raising at Bonamoussadi Market (Douala).", image: gallery6 },
+  { id: 7, title: "Midi Ensemble Program", description: "Midi Ensemble Program, which is a conference with parents of children living with sickle cell disease in 2025.", image: gallery7 },
+  { id: 8, title: "Village Outreach (Bimbia)", description: "Awareness and screening in Bimbia Village, Limbe.", image: gallery8 },
+  { id: 9, title: "Media Tour", description: "Media tour on TV and radio stations to raise awareness.", image: gallery9 },
+  { id: 10, title: "Region Outreach (West)", description: "Awareness in the west region.", image: gallery10 },
+  { id: 11, title: "Region Outreach (Centre)", description: "Awareness in the centre region.", image: gallery11 },
+  { id: 12, title: "Region Outreach (Littoral)", description: "Awareness in the littoral region.", image: gallery12 },
+  { id: 13, title: "University Outreach (YDE)", description: "Awareness and screening at YDE University.", image: gallery13 },
+];
+
 const GallerySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [galleryItems, setGalleryItems] = useState(STATIC_GALLERY);
 
-  const galleryItems = [
-    {
-      id: 1,
-      title: "Awareness Walk 2025 (Yaounde)",
-      description: "Sports and awareness walk in the Yaounde Central region during the month of June 2025 International Sickle Cell Day",
-      image: gallery1
-    },
-    {
-      id: 2,
-      title: "Awareness Walk 2025 (Douala)",
-      description: "Awareness campaign and fitness walk in the city of Douala! June 2025 (International Sickle Cell Day)",
-      image: gallery2
-    },
-    {
-      id: 3,
-      title: "University Symposium (FMSP)",
-      description: "Symposium with professors and free screening at FMSP University Douala",
-      image: gallery3
-    },
-    {
-      id: 4,
-      title: "Church Outreach Program",
-      description: "Awareness and screening in churches to reach a wider community audience",
-      image: gallery4
-    },
-    {
-      id: 5,
-      title: "Region Outreach (Southwest)",
-      description: "Awareness in the southwest region.",
-      image: gallery5
-    },
-    {
-      id: 6,
-      title: "Regional Outreach (Douala)",
-      description: "Awareness raising at Bonamoussadi Market (Douala).",
-      image: gallery6
-    },
-    {
-      id: 7,
-      title: "Midi Ensemble Program",
-      description: "Midi Ensemble Program, which is a conference with parents of children living with sickle cell disease in 2025.",
-      image: gallery7
-    },
-    {
-      id: 8,
-      title: "Village Outreach (Bimbia)",
-      description: "Awareness and screening in Bimbia Village, Limbe.",
-      image: gallery8
-    },
-    {
-      id: 9,
-      title: "Media Tour",
-      description: "Media tour on TV and radio stations to raise awareness.",
-      image: gallery9
-    },
-    {
-      id: 10,
-      title: "Region Outreach (West)",
-      description: "Awareness in the west region.",
-      image: gallery10
-    },
-    {
-      id: 11,
-      title: "Region Outreach (Centre)",
-      description: "Awareness in the centre region.",
-      image: gallery11
-    },
-    {
-      id: 12,
-      title: "Region Outreach (Littoral)",
-      description: "Awareness in the littoral region.",
-      image: gallery12
-    },
-    {
-      id: 12,
-      title: "Region Outreach (Littoral)",
-      description: "Awareness in the littoral region.",
-      image: gallery12
-    },
-    {
-      id: 13,
-      title: "University Outreach (YDE)",
-      description: "Awareness and screening at YDE University.",
-      image: gallery13
-    },
-  ];
+  useEffect(() => {
+    const fetchGallery = async () => {
+      const data = await getGallery();
+      if (data && data.length > 0) {
+        setGalleryItems(data);
+      }
+    };
+    fetchGallery();
+  }, []);
 
   const itemsPerPage = 3;
   const totalPages = Math.ceil(galleryItems.length / itemsPerPage);
@@ -138,7 +81,6 @@ const GallerySection = () => {
 
         {/* CAROUSEL */}
         <div className="gallery-carousel">
-          {/* NAVIGATION BUTTONS */}
           <button 
             className="gallery-nav-btn prev" 
             onClick={goToPrevious}
@@ -149,26 +91,15 @@ const GallerySection = () => {
             </svg>
           </button>
 
-          {/* GALLERY GRID */}
           <div className="gallery-grid">
             {visibleItems.map((item) => (
               <div key={item.id} className="gallery-item">
-                {/* IMAGE PLACEHOLDER */}
                 <div className="gallery-image">
                   <img src={item.image} alt={item.title} />
                   <div className="image-overlay">
                     <h3 className="overlay-title">{item.title}</h3>
                   </div>
                 </div>
-                {/* <div className="gallery-image-placeholder">
-                  <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
-                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-                  </svg>
-                  <div className="image-overlay">
-                    <h3 className="overlay-title">{item.title}</h3>
-                  </div>
-                </div> */}
-
                 <div className="gallery-content">
                   <p className="gallery-description">{item.description}</p>
                 </div>
